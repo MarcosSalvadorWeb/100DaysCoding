@@ -1,0 +1,6 @@
+Receita Nova de Pizza: 
+ Pepperoni 
+ Salsa 
+ Cebola 
+ Sal 
+ Massa
