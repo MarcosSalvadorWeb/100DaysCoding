@@ -1,6 +1,7 @@
 import math
 import tkinter as tk
 from PIL.PngImagePlugin import PngImageFile
+from tkinter import messagebox
 
 #---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -34,14 +35,49 @@ def start_timer():
     long_break_sec = LONG_BREAK_MIN * 60
 
     if reps % 8 == 0:
+        messagebox.showinfo(
+            title="Long Break",
+            message="Você estudou bastante.\nHora de descansar 20 minutos ☕"
+        )
+
         count_down(long_break_sec)
-        timer_label.config(text="Long Break", fg=RED, font=(FONT_NAME, 35, "bold"))
+
+        timer_label.config(
+            text="Long Break",
+            fg=RED,
+            font=(FONT_NAME, 35, "bold")
+        )
+
     elif reps % 2 == 0:
+
+        messagebox.showinfo(
+            title="Short Break",
+            message="Bom trabalho!\nFaça uma pausa de 5 minutos 🚶"
+        )
+
         count_down(short_break_sec)
-        timer_label.config(text="Short Break", fg=PINK, font=(FONT_NAME, 35, "bold"))
+
+        timer_label.config(
+            text="Short Break",
+            fg=PINK,
+            font=(FONT_NAME, 35, "bold")
+        )
+
     else:
+
+        messagebox.showinfo(
+            title="Focus Time",
+            message="Hora de focar nos estudos 📚"
+        )
+
         count_down(work_sec)
-        timer_label.config(text="Work", fg=GREEN, font=(FONT_NAME, 35, "bold"))
+
+        timer_label.config(
+            text="Work",
+            fg=GREEN,
+            font=(FONT_NAME, 35, "bold")
+        )
+
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 def count_down(count):
