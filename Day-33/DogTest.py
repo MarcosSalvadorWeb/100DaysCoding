@@ -1,20 +1,27 @@
-import time
-import schedule
 import requests
 from email.message import EmailMessage
 import smtplib
-from datetime import datetime, timezone
 
 MY_EMAIL = "salvadormarcosjrjr@gmail.com"
 PASSWORD = "llhu tdsl yqge chgc"
 
+import requests
+import smtplib
+
+from email.message import EmailMessage
+
+
 def send_good_morning():
 
-    cat_url = "https://cataas.com/cat/says/Bom%20Dia"
+    response = requests.get(
+        "https://dog.ceo/api/breeds/image/random"
+    )
+
+    dog_url = response.json()["message"]
 
     msg = EmailMessage()
 
-    msg["Subject"] = "Bom Dia com Gatinhos 🐱"
+    msg["Subject"] = "Bom Dia com Cachorrinhos 🐶"
     msg["From"] = MY_EMAIL
     msg["To"] = "destino@gmail.com"
 
@@ -22,9 +29,9 @@ def send_good_morning():
         f"""
 Bom dia, Flor do Dia ☀️
 
-Aqui está seu gatinho de Bom dia:
+Aqui está seu cachorrinho de Bom Dia:
 
-{cat_url}
+{dog_url}
 """
     )
 
@@ -42,10 +49,4 @@ Aqui está seu gatinho de Bom dia:
     print("Email enviado com sucesso!")
 
 
-schedule.every().day.at("06:00").do(send_good_morning)
-
-while True:
-
-    schedule.run_pending()
-
-    time.sleep(1)
+send_good_morning()
