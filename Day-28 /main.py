@@ -97,7 +97,7 @@ def count_down(count):
             ct += ct
         check_mark.config(text=mark, bg=YELLOW, fg=GREEN, font=(FONT_NAME, 25, "bold"))
         with open("./data.txt", "w") as file:
-            file.write(ct)
+            file.write(str(ct))
 
 # ---------------------------- UI SETUP ------------------------------- #
 import tkinter as tk
