@@ -21,9 +21,9 @@ def send_good_morning():
 
     msg = EmailMessage()
 
-    msg["Subject"] = "Bom Dia com Cachorrinhos 🐶"
+    msg["Subject"] = "Bom Dia com Cachorrinhos"
     msg["From"] = MY_EMAIL
-    msg["To"] = "destino@gmail.com"
+    msg["To"] = "brenda.nunes0212@gmail.com"
 
     msg.set_content(
         f"""
@@ -32,6 +32,9 @@ Bom dia, Flor do Dia ☀️
 Aqui está seu cachorrinho de Bom Dia:
 
 {dog_url}
+
+Amo Você!
+Junior.
 """
     )
 
